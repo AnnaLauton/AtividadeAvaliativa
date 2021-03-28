@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/templates/default.xhtml">
+
+            <ui:define name="content">
+                <div class="divisao" style="margin-top:30px;">
+                    <h1><h:outputFormat
+                            value="#{i18n.responda}">
+                            <f:param 
+                                value="#{empty userBean.name ? i18n.visitor : userBean.name}" />
+                        </h:outputFormat>
+                    </h1><br/>
+                    <h2>#{i18n.sextapergunta}</h2><br/>
+
+                    <h:form id = "Formulario">
+                        <h:selectOneMenu style = "padding: 5px;" value = "#{quiz6Bean.guess}"> 
+                            <f:selectItem itemValue = "q6o1" itemLabel = "AVI" /> 
+                            <f:selectItem itemValue = "q6o2" itemLabel = "MP4" /> 
+                            <f:selectItem itemValue = "q6o3" itemLabel = "3G2" /> 
+                            <f:selectItem itemValue = "q6o4" itemLabel = "JPEG" /> 
+                        </h:selectOneMenu> &nbsp;
+                        <h:commandButton style = "padding: 5px;"
+                                         action="response6"
+                                         value="#{i18n.send}" />
+
+                    </h:form>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
