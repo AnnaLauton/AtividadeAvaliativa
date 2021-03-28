@@ -9,23 +9,23 @@
 
     <ui:define name="content">
         <div class="divisao" style="margin-top:30px;">
-            <h1><h:outputFormat
-                    value="#{i18n.hi}">
+
+            <p><h:outputLabel 
+                    value="#{quiz4Bean.response}" /></p>   
+
+            <p><h:outputFormat
+                    value="#{i18n.jogarnovamente}">
                     <f:param 
                         value="#{empty userBean.name ? i18n.visitor : userBean.name}" />
-                </h:outputFormat>
-            </h1>
-            <br/>
-            <h1>#{i18n.escolhaquiz}</h1>
-            <br/>
-            <ul>
-                <li><h:link outcome="quiz1" value="Quiz 1" /></li>
-                <li><h:link outcome="quiz2" value="Quiz 2" /></li>
-                <li><h:link outcome="quiz3" value="Quiz 3" /></li>
-                <li><h:link outcome="quiz4" value="Quiz 4" /></li>
-                <li><h:link outcome="quiz5" value="Quiz 5" /></li>
-            </ul>
+                    </h:outputFormat></p>
+
+            <h:link
+                outcome="quiz4"
+                value="#{i18n.jogaresse}" /><br/>
+            <h:link
+                outcome="main"
+                value="#{i18n.jogaroutro}" />
+
         </div>    
     </ui:define>
 </ui:composition>
-
